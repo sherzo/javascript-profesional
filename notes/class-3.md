@@ -6,66 +6,66 @@ Los **closures** nos sirven para tener algo parecido a variables privadas, carac
 
 ```js
 // Closures
-      // printColor
+// printColor
 
-      // IIFE
-      (function() {
-        let color = 'green';
+// IIFE
+(function() {
+  let color = 'green';
 
-        function printColor() {
-          console.log(color);
-        }
+  function printColor() {
+    console.log(color);
+  }
 
-        printColor();
-      })();
+  printColor();
+})();
 
-      // Funciones que regresan funciones
-      function makeColorPrinter(color) {
-        let colorMessage = `The color is ${color}`;
+// Funciones que regresan funciones
+function makeColorPrinter(color) {
+  let colorMessage = `The color is ${color}`;
 
-        return function() {
-          console.log(colorMessage);
-        };
-      }
+  return function() {
+    console.log(colorMessage);
+  };
+}
 
-      let greenColorPrinter = makeColorPrinter('green');
-      console.log(greenColorPrinter());
+let greenColorPrinter = makeColorPrinter('green');
+console.log(greenColorPrinter());
 
-      variables "privadas"
-      const counter = {
-        count: 3,
-      };
-      console.log(counter.count);
-      counter.count = 99;
-      console.log(counter.count);
+variables "privadas"
+const counter = {
+  count: 3,
+};
+console.log(counter.count);
+counter.count = 99;
+console.log(counter.count);
 
-      function makeCounter(n) {
-        let count = n;
+function makeCounter(n) {
+  let count = n;
 
-        return {
-          increase: function() {
-            count = count + 1;
-          },
-          decrease: function() {
-            count = count - 1;
-          },
-          getCount: function() {
-            return count;
-          },
-        };
-      }
+  return {
+    increase: function() {
+      count = count + 1;
+    },
+    decrease: function() {
+      count = count - 1;
+    },
+    getCount: function() {
+      return count;
+    },
+  };
+}
 
-      let counter = makeCounter(7);
+let counter = makeCounter(7);
 
-      console.log('The count is:', counter.getCount());
-      counter.increase();
-      console.log('The count is:', counter.getCount());
-      counter.decrease();
-      counter.decrease();
-      counter.decrease();
-      counter.decrease();
-      console.log('The count is:', counter.getCount());
+console.log('The count is:', counter.getCount());
+counter.increase();
+console.log('The count is:', counter.getCount());
+counter.decrease();
+counter.decrease();
+counter.decrease();
+counter.decrease();
+console.log('The count is:', counter.getCount());
 
-      counter.count = 0;
-      console.log('The count is:', counter.getCount());
+counter.count = 0;
+console.log('The count is:', counter.getCount());
 ```
