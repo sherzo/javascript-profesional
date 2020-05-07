@@ -11,4 +11,6 @@
 - [Clase #3 - Closures](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-3.md)
 - [Clase #4 - this](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-4.md)
 - [Clase #5 - Los métodos call, apply y bind](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-5.md)
-- [Clase #5 - Prototype](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-6.md)
+- [Clase #6 - Prototype](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-6.md)
+- [Clase #7 - Herencia prototipal](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-7.md)
+- [Clase #7 - Parsers y el Abstract Syntax Tree](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-8.md)
