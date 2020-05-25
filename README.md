@@ -15,3 +15,4 @@
 - [Clase #7 - Herencia prototipal](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-7.md)
 - [Clase #8 - Parsers y el Abstract Syntax Tree](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-8.md)
 - [Clase #9 - Event Loop](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-9.md)
+- [Clase #10 - Promesas](https://github.com/sherzo/javascript-profesional/blob/master/notes/class-10.md)
