@@ -1,0 +1,67 @@
+# Clase #14 - Fetch - Cómo cancelar peticiones
+
+La peticiones AJAX permitieron en su tiempo hacer peticiones asíncronas al servidor sin tener que detener la carga de la página. Hoy en día se utiliza la función fetch para esto.
+
+Con fetch tenemos algo llamado **AbortController** que nos permite enviar una señal a una petición en plena ejecución para detenerla.
+
+
+```html
+<html>
+  <head>
+    <title>Abort Fetch</title>
+  </head>
+
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <img id="huge-image" height="400" />
+
+    <button id="load">Load HUGE Image</button>
+    <button id="stop" disabled>Stop Fetching</button>
+
+    <script>
+      const url =
+        'https://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100';
+      const img = document.getElementById('huge-image');
+      const loadButton = document.getElementById('load');
+      const stopButton = document.getElementById('stop');
+      let controller;
+
+      function startLoading() {
+        loadButton.disabled = true;
+        loadButton.innerText = 'Loading...';
+        stopButton.disabled = false;
+      }
+
+      function stopLoading() {
+        loadButton.disabled = false;
+        loadButton.innerText = 'Load HUGE Image';
+        stopButton.disabled = true;
+      }
+
+      loadButton.onclick = async function() {
+        startLoading();
+
+        controller = new AbortController();
+
+        try {
+          const response = await fetch(url, { signal: controller.signal });
+          const blob = await response.blob();
+          const imgUrl = URL.createObjectURL(blob);
+          img.src = imgUrl;
+        } catch (error) {
+          console.log(error.message);
+        }
+
+        stopLoading();
+      };
+
+      stopButton.onclick = function() {
+        controller.abort();
+        stopLoading();
+      };
+    </script>
+  </body>
+</html>
+```
